@@ -24,7 +24,7 @@ export const unstable_settings = { initialRouteName: 'index' };
 LogBox.ignoreLogs(["The action 'GO_BACK' was not handled by any navigator"]);
 
 export default function RootLayout() {
-  const [loaded] = useFonts({
+  const [loaded, error] = useFonts({
     PlayfairDisplay_500Medium,
     Mulish_400Regular,
     Mulish_500Medium,
@@ -33,10 +33,12 @@ export default function RootLayout() {
   });
 
   useEffect(() => {
-    if (loaded) SplashScreen.hideAsync().catch(() => {});
-  }, [loaded]);
+    if (loaded || error) SplashScreen.hideAsync().catch(() => {});
+  }, [loaded, error]);
 
-  if (!loaded) return null;
+  // Render once fonts load OR fail — never leave a blank screen if a font asset 404s (e.g. a host
+  // that strips node_modules paths); the app falls back to system fonts instead.
+  if (!loaded && !error) return null;
 
   return (
     <GestureHandlerRootView style={{ flex: 1, backgroundColor: C.bg }}>
