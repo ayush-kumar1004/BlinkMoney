@@ -1,0 +1,25 @@
+# Dependencies
+**/node_modules/
+
+# Expo / build output
+mobile/.expo/
+mobile/dist/
+mobile/web-build/
+**/*.tsbuildinfo
+
+# Native
+mobile/ios/
+mobile/android/
+
+# Packaged web build
+BlinkMoney-web.zip
+mobile/BlinkMoney-web.zip
+
+# Env / logs
+**/.env*
+**/npm-debug.*
+**/*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db

@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-tertiary": "#4a2533", "surface-med": "#1A1A1A", "on-secondary-fixed": "#092100", "secondary-container": "#53b900", "on-tertiary-fixed": "#31101e", "on-secondary-container": "#194200", "text-primary": "#FFFFFF", "text-secondary": "#808080", "surface-tint": "#91d963", "primary-container": "#9fe870", "on-error": "#690005", "primary-fixed-dim": "#91d963", "primary-fixed": "#acf67c", "outline": "#8b9481", "tertiary-fixed-dim": "#f0b7c9", "tertiary-container": "#ffc5d7", "on-tertiary-fixed-variant": "#643a49", "error-container": "#93000a", "surface-high": "#1F1F1F", "on-primary-fixed-variant": "#225100", "inverse-on-surface": "#313030", "surface-container-low": "#1c1b1b", "error": "#FF5854", "tertiary-fixed": "#ffd9e3", "on-secondary": "#143800", "border-neutral": "rgba(255,255,255,0.06)", "surface-bright": "#3a3939", "on-primary-fixed": "#092100", "on-secondary-fixed-variant": "#215100", "surface-container-highest": "#353534", "secondary-fixed-dim": "#76df35", "surface-dim": "#131313", "on-primary-container": "#2e6900", "surface-highest": "#242424", "secondary": "#76df35", "text-near-white": "#F3F3F3", "outline-variant": "#41493a", "tertiary": "#ffecf0", "on-background": "#e5e2e1", "on-error-container": "#ffdad6", "text-tertiary": "#4D4D4D", "surface-low": "#141414", "surface-container-lowest": "#0e0e0e", "inverse-surface": "#e5e2e1", "surface-variant": "#353534", "border-brand": "#1A3300", "inverse-primary": "#2f6c00", "green-glass": "rgba(159,232,112,0.12)", "on-tertiary-container": "#7b4f5e", "surface-container-high": "#2a2a2a", "on-surface-variant": "#c1cab5", "on-surface": "#e5e2e1", "surface-container": "#201f1f", "deep-green": "#0D1F00", "primary": "#d0ffad", "surface": "#131313", "secondary-fixed": "#91fc50", "background": "#131313", "on-primary": "#153800" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "md": "12px", "lg": "16px", "xl": "20px", "sm": "8px", "xs": "4px", "4xl": "40px", "3xl": "32px", "card-padding": "16px", "2xl": "24px", "gutter": "20px" }, "fontFamily": { "hero": ["Playfair Display"], "body-md": ["Mulish"], "micro": ["Mulish"], "title-lg": ["Mulish"], "sub-headline": ["Playfair Display"], "caption": ["Mulish"], "label-sm": ["Mulish"] }, "fontSize": { "hero": ["34px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "micro": ["10px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }], "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "700" }], "sub-headline": ["24px", { "lineHeight": "32px", "fontWeight": "500" }], "caption": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "label-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }] } } } }</script><style>@layer base { body { @apply bg-[#0C0C0C] text-on-surface antialiased; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } } .no-scrollbar::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+    
+    .draw-bike path {
+      stroke-dasharray: 400;
+      stroke-dashoffset: 400;
+      animation: draw-frame 1s ease-out forwards;
+    }
+    
+    .draw-bike circle {
+      stroke-dasharray: 250;
+      stroke-dashoffset: 250;
+      animation: draw-wheels 1s ease-out 0.5s forwards;
+    }
+
+    @keyframes draw-frame {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+    
+    @keyframes draw-wheels {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    .fill-progress {
+      width: 0%;
+      animation: fill-bar 1s ease-out 1.5s forwards;
+    }
+
+    @keyframes fill-bar {
+      to {
+        width: 33.333333%;
+      }
+    }
+  </style>
+</head><body class="min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 bg-[#0C0C0C]/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between"><button class="w-11 h-11 flex items-center justify-start text-on-surface"><span class="material-symbols-outlined text-[24px]">arrow_back_ios_new</span></button><div class="flex-1 flex justify-center items-center gap-xs"><div class="w-8 h-1 rounded-full bg-primary"></div><div class="w-1.5 h-1 rounded-full bg-surface-highest"></div><div class="w-1.5 h-1 rounded-full bg-surface-highest"></div></div></div></header><main class="flex-1 pt-16 pb-24 bg-[#0C0C0C]"><div class="px-gutter pt-lg"><div class="flex flex-col w-full gap-4xl pb-4xl">
+<div class="flex flex-col gap-sm">
+<h1 class="font-hero text-hero text-text-primary">Dream Bike</h1>
+<p class="font-body-md text-body-md text-text-secondary">Set your goal and we'll calculate the optimal path.</p>
+</div>
+<!-- Updated Editorial Visual Centerpiece -->
+<div class="relative w-full aspect-[4/3] flex items-center justify-center bg-surface-low rounded-2xl overflow-hidden border border-border-neutral">
+<!-- Subtle Blueprint Grid Background -->
+<svg class="absolute inset-0 w-full h-full text-surface-bright opacity-20" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="20" id="grid" patternUnits="userSpaceOnUse" width="20">
+<path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" stroke-width="0.5"></path>
+</pattern>
+</defs>
+<rect fill="url(#grid)" height="100%" width="100%"></rect>
+</svg>
+<!-- Glowing Animated Bike Illustration -->
+<div class="relative w-64 h-64 flex items-center justify-center">
+<svg class="w-full h-full drop-shadow-xl draw-bike" fill="none" viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg">
+<!-- Built Frame (Glowing Green) -->
+<path class="text-primary-fixed" d="M50 110 L100 50 L160 50 L110 110 Z" stroke="currentColor" stroke-linejoin="round" stroke-width="6"></path>
+<path class="text-primary-fixed" d="M100 50 L90 20 M80 20 L100 20" stroke="currentColor" stroke-linecap="round" stroke-width="6"></path>
+<path class="text-primary-fixed" d="M160 50 L175 110" stroke="currentColor" stroke-linecap="round" stroke-width="6"></path>
+<path class="text-primary-fixed" d="M160 50 L155 30 L170 30" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></path>
+<!-- Rear Wheel -->
+<circle class="text-primary-fixed" cx="50" cy="110" r="35" stroke="currentColor" stroke-width="6"></circle>
+<circle class="text-primary-fixed" cx="50" cy="110" fill="currentColor" r="6" stroke="none" style="animation: none;"></circle>
+<!-- Built Front Wheel (Glowing Green) -->
+<circle class="text-primary-fixed" cx="175" cy="110" r="35" stroke="currentColor" stroke-width="6"></circle>
+<circle class="text-primary-fixed" cx="175" cy="110" fill="currentColor" r="6" stroke="none" style="animation: none;"></circle>
+</svg>
+</div>
+</div>
+<div class="flex flex-col gap-3xl">
+<div class="flex flex-col gap-md">
+<label class="font-label-sm text-label-sm text-text-primary">Target Amount</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 font-sub-headline text-sub-headline text-text-secondary">₹</span>
+<input class="w-full h-16 pl-10 pr-4 bg-surface-high border border-border-neutral rounded-xl font-sub-headline text-sub-headline text-text-primary focus:outline-none focus:border-border-brand transition-colors text-right" readonly="" type="text" value="2,50,000">
+</div>
+</div>
+<div class="flex flex-col gap-md">
+<label class="font-label-sm text-label-sm text-text-primary">Timeline</label>
+<div class="grid grid-cols-3 gap-md">
+<button class="h-12 flex items-center justify-center rounded-xl bg-surface-high border border-border-neutral font-label-sm text-label-sm text-text-secondary transition-colors hover:bg-surface-highest">1 Year</button>
+<button class="h-12 flex items-center justify-center rounded-xl bg-green-glass border border-border-brand font-label-sm text-label-sm text-primary transition-colors">2 Years</button>
+<button class="h-12 flex items-center justify-center rounded-xl bg-surface-high border border-border-neutral font-label-sm text-label-sm text-text-secondary transition-colors hover:bg-surface-highest">3 Years</button>
+</div>
+</div>
+<div class="flex flex-col gap-lg p-card-padding rounded-xl bg-surface-med border border-border-neutral">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-text-secondary">Suggested Pace</span>
+<div class="flex items-center gap-xs px-3 py-1.5 rounded-full bg-green-glass">
+<span class="material-symbols-outlined text-[16px] text-primary">bolt</span>
+<span class="font-label-sm text-label-sm text-primary">₹342 / day</span>
+</div>
+</div>
+<div class="w-full h-1 bg-surface-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary fill-progress"></div>
+</div>
+<p class="font-caption text-caption text-text-tertiary">Estimated projection based on illustrative returns. Market conditions apply.</p>
+</div>
+</div>
+<div class="mt-auto">
+<button class="w-full h-14 flex items-center justify-center gap-2 rounded-lg bg-primary font-label-sm text-label-sm text-deep-green transition-transform active:scale-[0.98]">
+<span class="">Start building this</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div></div></main>
+
+
+</body></html>

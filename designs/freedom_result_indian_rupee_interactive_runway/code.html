@@ -1,0 +1,161 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-tertiary": "#4a2533", "surface-med": "#1A1A1A", "on-secondary-fixed": "#092100", "secondary-container": "#53b900", "on-tertiary-fixed": "#31101e", "on-secondary-container": "#194200", "text-primary": "#FFFFFF", "text-secondary": "#808080", "surface-tint": "#91d963", "primary-container": "#9fe870", "on-error": "#690005", "primary-fixed-dim": "#91d963", "primary-fixed": "#acf67c", "outline": "#8b9481", "tertiary-fixed-dim": "#f0b7c9", "tertiary-container": "#ffc5d7", "on-tertiary-fixed-variant": "#643a49", "error-container": "#93000a", "surface-high": "#1F1F1F", "on-primary-fixed-variant": "#225100", "inverse-on-surface": "#313030", "surface-container-low": "#1c1b1b", "error": "#FF5854", "tertiary-fixed": "#ffd9e3", "on-secondary": "#143800", "border-neutral": "rgba(255,255,255,0.06)", "surface-bright": "#3a3939", "on-primary-fixed": "#092100", "on-secondary-fixed-variant": "#215100", "surface-container-highest": "#353534", "secondary-fixed-dim": "#76df35", "surface-dim": "#131313", "on-primary-container": "#2e6900", "surface-highest": "#242424", "secondary": "#76df35", "text-near-white": "#F3F3F3", "outline-variant": "#41493a", "tertiary": "#ffecf0", "on-background": "#e5e2e1", "on-error-container": "#ffdad6", "text-tertiary": "#4D4D4D", "surface-low": "#141414", "surface-container-lowest": "#0e0e0e", "inverse-surface": "#e5e2e1", "surface-variant": "#353534", "border-brand": "#1A3300", "inverse-primary": "#2f6c00", "green-glass": "rgba(159,232,112,0.12)", "on-tertiary-container": "#7b4f5e", "surface-container-high": "#2a2a2a", "on-surface-variant": "#c1cab5", "on-surface": "#e5e2e1", "surface-container": "#201f1f", "deep-green": "#0D1F00", "primary": "#d0ffad", "surface": "#131313", "secondary-fixed": "#91fc50", "background": "#131313", "on-primary": "#153800" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "md": "12px", "lg": "16px", "xl": "20px", "sm": "8px", "xs": "4px", "4xl": "40px", "3xl": "32px", "card-padding": "16px", "2xl": "24px", "gutter": "20px" }, "fontFamily": { "hero": ["Playfair Display"], "body-md": ["Mulish"], "micro": ["Mulish"], "title-lg": ["Mulish"], "sub-headline": ["Playfair Display"], "caption": ["Mulish"], "label-sm": ["Mulish"] }, "fontSize": { "hero": ["34px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "micro": ["10px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }], "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "700" }], "sub-headline": ["24px", { "lineHeight": "32px", "fontWeight": "500" }], "caption": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "label-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }] } } } }</script><style>@layer base { body { @apply bg-[#0C0C0C] text-on-surface antialiased; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } } .no-scrollbar::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 bg-[#0C0C0C]/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between"><button class="w-11 h-11 flex items-center justify-start text-on-surface"><span class="material-symbols-outlined text-[24px]">arrow_back_ios_new</span></button><h1 class="font-label-sm text-label-sm text-on-surface text-center flex-1 truncate">4. Freedom Result — Days of Freedom</h1><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="flex-1 pt-16 pb-24 bg-[#0C0C0C]"><div class="px-gutter pt-lg"><div class="flex flex-col w-full h-full">
+<div class="px-lg pb-xl flex flex-col items-start gap-sm animate-fade-in-up" style="animation-delay: 50ms;">
+<h1 class="font-hero text-hero text-text-primary">You're covered for <span class="text-[#9FE870]"><span id="days-counter" class="">38</span> days</span></h1>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">Your balance gives you freedom to handle the unexpected.</p>
+</div>
+<div class="relative w-full h-80 flex items-center justify-center animate-fade-in-up" style="animation-delay: 150ms;">
+<!-- Circular Progress Vis -->
+<svg class="absolute z-10" height="280" viewBox="0 0 280 280" width="280">
+<defs>
+<linearGradient id="progressGradient" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#91fc50"></stop>
+<stop offset="100%" stop-color="#53b900"></stop>
+</linearGradient>
+<linearGradient id="projectedGradient" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="rgba(159,232,112,0.3)"></stop>
+<stop offset="100%" stop-color="rgba(83,185,0,0.1)"></stop>
+</linearGradient>
+</defs>
+<!-- Track -->
+<circle cx="140" cy="140" fill="none" r="120" stroke="rgba(255,255,255,0.06)" stroke-width="12"></circle>
+<!-- Progress -->
+<path class="animate-draw-circle transition-all duration-500 ease-out" d="M 140 20 A 120 120 0 0 1 248.5 191" fill="none" id="progress-ring" stroke="url(#progressGradient)" stroke-linecap="butt" stroke-width="12" style="stroke-dasharray: 753; stroke-dashoffset: 430;"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center z-20">
+<div class="font-micro text-micro text-text-secondary uppercase tracking-widest mb-1">Current Balance</div>
+<div class="font-title-lg text-[40px] leading-tight font-bold text-text-primary">₹3,20,000</div>
+<div class="flex items-center gap-2 mt-2 px-3 py-1 rounded-full bg-green-glass">
+<span class="material-symbols-outlined text-[16px] text-primary">trending_up</span>
+<span class="font-caption text-caption text-primary">+₹12,000 this month</span>
+</div>
+</div>
+</div>
+<div class="px-lg pb-3xl flex flex-col items-center animate-fade-in-up" style="animation-delay: 200ms;">
+<div class="flex items-center justify-center gap-3 w-full">
+<button class="chip-btn px-4 py-2 rounded-full font-label-sm text-sm border transition-colors bg-transparent border-border-neutral text-text-secondary" data-days="5" data-offset="600" data-val="21">
+      ₹21/day
+    </button>
+<button class="chip-btn px-4 py-2 rounded-full font-label-sm text-sm border transition-colors bg-green-glass border-[#9FE870] text-[#9FE870]" data-days="14" data-offset="430" data-val="50">
+      ₹50/day
+    </button>
+<button class="chip-btn px-4 py-2 rounded-full font-label-sm text-sm border transition-colors bg-transparent border-border-neutral text-text-secondary" data-days="28" data-offset="200" data-val="100">
+      ₹100/day
+    </button>
+</div>
+<p class="font-caption text-caption text-primary-fixed-dim mt-4 text-center transition-opacity duration-300" id="dynamic-projection">
+    +₹50/day ≈ +14 days of freedom this year (illustrative)
+  </p>
+</div>
+<div class="px-lg flex flex-col gap-lg pb-3xl animate-fade-in-up" style="animation-delay: 250ms;">
+<div class="flex items-start gap-3 px-2">
+<span class="material-symbols-outlined text-text-tertiary text-[16px] mt-0.5">info</span>
+<p class="font-micro text-micro text-text-tertiary leading-relaxed flex-1">Projections assume current monthly contribution + selected daily increase, earning 4.2% p.a. Illustrative / assumed return, subject to market risk.</p>
+</div>
+</div>
+<div class="mt-auto px-lg pb-lg animate-fade-in-up" style="animation-delay: 350ms;">
+<button class="w-full bg-[#9FE870] text-deep-green font-label-sm text-label-sm py-4 rounded-lg flex items-center justify-center gap-2 active:scale-[0.98] transition-transform">
+      Start building
+      <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<button class="w-full mt-4 text-primary font-label-sm text-label-sm py-3 rounded-lg flex items-center justify-center bg-transparent active:bg-surface-low transition-colors">
+      View breakdown
+    </button>
+</div>
+</div>
+<style>
+  @keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in-up {
+    opacity: 0;
+    animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const counterEl = document.getElementById('days-counter');
+    const ring = document.getElementById('progress-ring');
+    const chips = document.querySelectorAll('.chip-btn');
+    const projectionText = document.getElementById('dynamic-projection');
+    
+    // Initial Animation
+    let startTimestamp = null;
+    const duration = 800;
+    const targetValue = 38;
+    
+    // Animate ring to 38-day initial position
+    setTimeout(() => {
+        ring.style.strokeDashoffset = 430;
+    }, 100);
+
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      // easeOutQuart
+      const easeProgress = 1 - Math.pow(1 - progress, 4);
+      counterEl.textContent = Math.floor(easeProgress * targetValue);
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        counterEl.textContent = targetValue;
+      }
+    };
+    window.requestAnimationFrame(step);
+
+    // Chip interaction
+    chips.forEach(chip => {
+      chip.addEventListener('click', function() {
+        // Reset all chips
+        chips.forEach(c => {
+          c.classList.remove('bg-green-glass', 'border-[#9FE870]', 'text-[#9FE870]');
+          c.classList.add('bg-transparent', 'border-border-neutral', 'text-text-secondary');
+        });
+        
+        // Activate clicked chip
+        this.classList.remove('bg-transparent', 'border-border-neutral', 'text-text-secondary');
+        this.classList.add('bg-green-glass', 'border-[#9FE870]', 'text-[#9FE870]');
+        
+        const val = this.getAttribute('data-val');
+        const days = this.getAttribute('data-days');
+        const offset = this.getAttribute('data-offset');
+        
+        // Update projection text
+        projectionText.style.opacity = 0;
+        setTimeout(() => {
+            projectionText.textContent = `+₹${val}/day ≈ +${days} days of freedom this year (illustrative)`;
+            projectionText.style.opacity = 1;
+        }, 150);
+
+        // Update Ring (simulate changing projection)
+        ring.style.strokeDashoffset = offset;
+        
+        // Update main counter based on selection logic
+        const newTarget = 38 + parseInt(days) - 14; // Base 38 is with 50/day (14 days) assumed
+        
+        let currentVal = parseInt(counterEl.textContent);
+        const diff = newTarget - currentVal;
+        const steps = 20;
+        let currentStep = 0;
+        
+        const countInt = setInterval(() => {
+            currentStep++;
+            counterEl.textContent = Math.floor(currentVal + (diff * (currentStep/steps)));
+            if(currentStep >= steps) {
+                clearInterval(countInt);
+                counterEl.textContent = newTarget;
+            }
+        }, 20);
+
+      });
+    });
+  });
+</script></div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-[#0C0C0C]/90 backdrop-blur-xl shadow-[0_-1px_8px_rgba(0,0,0,0.04)]" data-active-classes="text-primary"><div class="h-16 flex items-center justify-around"><a class="flex flex-col items-center justify-center gap-1 min-w-[64px] transition-colors text-on-surface-variant hover:text-on-surface" data-path="home" href="#"><span class="material-symbols-outlined">home</span><span class="font-micro text-micro">Home</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-1 min-w-[64px] transition-colors text-primary" data-path="save" href="#"><span class="material-symbols-outlined">savings</span><span class="font-micro text-micro">Save</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[64px] transition-colors text-on-surface-variant hover:text-on-surface" data-path="borrow" href="#"><span class="material-symbols-outlined">account_balance</span><span class="font-micro text-micro">Borrow</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[64px] transition-colors text-on-surface-variant hover:text-on-surface" data-path="rewards" href="#"><span class="material-symbols-outlined">loyalty</span><span class="font-micro text-micro">Rewards</span></a></div></nav>
+
+</body></html>
