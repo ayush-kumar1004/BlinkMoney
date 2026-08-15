@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Pressable, View, StyleSheet } from 'react-native';
-import { useRouter } from 'expo-router';
 import * as Haptics from 'expo-haptics';
 import Animated, { FadeIn } from 'react-native-reanimated';
 import { Screen } from '@/components/Screen';
@@ -14,7 +13,6 @@ import { progressPct, progressPercentLabel } from '@/lib/calc';
 import { color as C, radius, space } from '@/theme/tokens';
 
 export default function Share() {
-  const router = useRouter();
   const goal = useGoalStore((s) => s.activeGoal);
   const consistencyDays = useGoalStore((s) => s.consistencyDays);
   const [confirm, setConfirm] = useState<string | null>(null);

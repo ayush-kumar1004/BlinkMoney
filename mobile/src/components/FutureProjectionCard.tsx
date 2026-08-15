@@ -104,6 +104,9 @@ export function FutureProjectionCard({ goal }: { goal: DreamGoal }) {
           <Chip key={r.v} label={`${Math.round(r.v * 100)}%`} selected={rate === r.v} onPress={() => setRate(r.v)} style={styles.flexChip} />
         ))}
       </View>
+      <Text variant="caption" color={C.textSecondary} style={styles.rateNote}>
+        {RATES.find((r) => r.v === rate)?.label} · illustrative assumption, actual returns vary.
+      </Text>
 
       {/* Three numbers — projected value dominant */}
       <View style={styles.result}>
@@ -182,6 +185,7 @@ const styles = StyleSheet.create({
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: space.sm, marginTop: space.md },
   rowChips: { flexDirection: 'row', gap: space.sm },
   flexChip: { flex: 1 },
+  rateNote: { marginTop: space.sm },
   result: { marginTop: space.xl, gap: space.sm },
   smallRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
   divider: { height: 1, backgroundColor: C.borderNeutral, marginVertical: space.sm },

@@ -25,15 +25,14 @@ export function AnimatedNumber({
   from = 0,
 }: AnimatedNumberProps) {
   const reduced = useReducedMotion();
-  const [display, setDisplay] = useState(reduced ? value : from);
-  const fromRef = useRef(reduced ? value : from);
+  const [display, setDisplay] = useState(from);
+  const fromRef = useRef(from);
   const rafRef = useRef<number | null>(null);
 
   useEffect(() => {
     if (reduced) {
-      // Respect reduced-motion: jump straight to the value, no count-up.
+      // Respect reduced-motion: no count-up; the value is rendered directly (see `shown` below).
       fromRef.current = value;
-      setDisplay(value);
       return;
     }
     const from = fromRef.current;
@@ -58,9 +57,10 @@ export function AnimatedNumber({
     };
   }, [value, duration, reduced]);
 
+  const shown = reduced ? value : display;
   return (
     <Text variant={variant} color={color} style={style}>
-      {format(display)}
+      {format(shown)}
     </Text>
   );
 }

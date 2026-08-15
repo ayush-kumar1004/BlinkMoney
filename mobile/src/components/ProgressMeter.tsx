@@ -1,5 +1,5 @@
 import { View, StyleSheet } from 'react-native';
-import { color as C, radius, space } from '@/theme/tokens';
+import { color as C } from '@/theme/tokens';
 
 interface ProgressMeterProps {
   value: number; // 0..1 actual
