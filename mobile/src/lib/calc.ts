@@ -100,6 +100,62 @@ export function futureValueSIP(dailyAmount: number, years: number, annualRate: n
   return monthly * ((Math.pow(1 + i, n) - 1) / i);
 }
 
+/**
+ * Projected total balance at a horizon = future value of the daily SIP PLUS the user's existing
+ * savings compounded. ILLUSTRATIVE. Reuses futureValueSIP for the contribution part.
+ */
+export function projectedBalance(
+  currentSaved: number,
+  dailyAmount: number,
+  years: number,
+  annualRate: number,
+): number {
+  const contributionFV = futureValueSIP(dailyAmount, years, annualRate);
+  const savingsFV = currentSaved * Math.pow(1 + annualRate, years);
+  return contributionFV + savingsFV;
+}
+
+/**
+ * Approximate months until the projected balance (current savings + monthly SIP, compounded)
+ * first reaches the target. Starts from ACTUAL current savings, not zero. Returns Infinity if it
+ * doesn't reach within the cap. ILLUSTRATIVE.
+ */
+export function monthsToReachTarget(
+  currentSaved: number,
+  target: number,
+  dailyAmount: number,
+  annualRate: number,
+  capMonths = 720,
+): number {
+  if (target <= 0 || currentSaved >= target) return 0;
+  const monthly = (dailyAmount * 365) / 12;
+  const i = annualRate / 12;
+  let balance = currentSaved;
+  for (let m = 1; m <= capMonths; m++) {
+    balance = balance * (1 + i) + monthly;
+    if (balance >= target) return m;
+  }
+  return Infinity;
+}
+
+/** Months -> "2 years 3 months" (null if not finite). */
+export function formatMonthsDuration(months: number): string | null {
+  if (!Number.isFinite(months)) return null;
+  if (months <= 0) return 'now';
+  const y = Math.floor(months / 12);
+  const mo = Math.round(months % 12);
+  const yPart = y > 0 ? `${y} year${y > 1 ? 's' : ''}` : '';
+  const mPart = mo > 0 ? `${mo} month${mo > 1 ? 's' : ''}` : '';
+  return [yPart, mPart].filter(Boolean).join(' ') || '0 months';
+}
+
+/** A future Date that is `months` from now. */
+export function dateFromMonths(months: number): Date {
+  const d = new Date();
+  d.setMonth(d.getMonth() + Math.round(months));
+  return d;
+}
+
 /** Illustrative one-day earnings on an invested amount. */
 export function dailyEarnings(amount: number, annualRate: number): number {
   return (amount * annualRate) / 365;

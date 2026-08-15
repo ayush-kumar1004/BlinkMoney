@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useReducedMotion } from 'react-native-reanimated';
 import { Text } from './Text';
 import { FontVariant } from '@/theme/tokens';
 
@@ -23,11 +24,18 @@ export function AnimatedNumber({
   style,
   from = 0,
 }: AnimatedNumberProps) {
-  const [display, setDisplay] = useState(from);
-  const fromRef = useRef(from);
+  const reduced = useReducedMotion();
+  const [display, setDisplay] = useState(reduced ? value : from);
+  const fromRef = useRef(reduced ? value : from);
   const rafRef = useRef<number | null>(null);
 
   useEffect(() => {
+    if (reduced) {
+      // Respect reduced-motion: jump straight to the value, no count-up.
+      fromRef.current = value;
+      setDisplay(value);
+      return;
+    }
     const from = fromRef.current;
     const to = value;
     if (from === to) return;
@@ -48,7 +56,7 @@ export function AnimatedNumber({
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
       fromRef.current = to;
     };
-  }, [value, duration]);
+  }, [value, duration, reduced]);
 
   return (
     <Text variant={variant} color={color} style={style}>

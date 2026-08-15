@@ -12,6 +12,7 @@ import { ProgressMeter } from '@/components/ProgressMeter';
 import { AnimatedNumber } from '@/components/AnimatedNumber';
 import { ConsistencyChip } from '@/components/ConsistencyChip';
 import { MilestoneCard } from '@/components/MilestoneCard';
+import { FutureProjectionCard } from '@/components/FutureProjectionCard';
 import { TabBar } from '@/components/TabBar';
 import { GoalEmpty } from '@/components/states/GoalEmpty';
 import { GoalLoading } from '@/components/states/GoalLoading';
@@ -104,6 +105,8 @@ export default function Goal() {
           <MilestoneCard label={nextMilestone.label} pct={nextMilestone.pct} />
         ) : null}
       </View>
+
+      <FutureProjectionCard goal={goal} />
 
       <Button
         label="Add money"
